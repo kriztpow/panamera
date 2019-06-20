@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+
+  "name": "CORANOS ROBOCOP OPTIMUS",
+  "description": "Trabaja mas rapido de lo normal",
+  "short_name": "CORANOS ROBOCOP OPTIMUS",
+  "version": "1.0",
+
+  "icons": {
+    "16": "/img/logo/16.png",
+    "32": "/img/logo/32.png",
+    "48": "/img/logo/48.png",
+    "64": "/img/logo/64.png",
+    "96": "/img/logo/96.png",
+    "128": "/img/logo/128.png"
+  },
+  
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "options_page": "options.html",
+    
+  "browser_action": {
+    "default_icon": {
+      "16": "/img/logo/16.png",
+      "32": "/img/logo/32.png"
+    },
+    "default_popup": "options.html",
+    "default_title": "Options"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://faucet.banano.coranos.io/hcaptcha"],
+      "match_about_blank": true,
+      "js": [
+        "/js/jQuery3.4.1.js",
+        "/js/jQueryUI1.12.1.js",
+        "/js/content/rcs.js"
+      ],
+      "persistent": true,
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+
+
+  "permissions": [
+    "proxy",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "browsingData",
+    "cookies",
+    "\u003Call_urls>"
+  ]
+  
+}
